@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tranEx5</title>
+  <style>
+   /* h1{
+      height: 86px;
+      line-height: 86px;
+      text-align: center;
+    }
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      border: 3px solid #000;
+      background-color: aquamarine;
+      width: 1212px;
+    }
+    li{
+      padding: 16px;
+      width: 370px; height: 370px;
+      position: relative;
+     
+
+    }
+    li .txt{
+      position: absolute;
+      bottom:16px; left:16px;
+      width: 370px;
+      height: 0px;
+      text-align: center;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.973);
+      opacity: 0;
+    }
+    li img{
+      display: block;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    li:hover .txt{
+      display: block;
+      transition: 1s;
+      width: 370px;height: 370px;
+      opacity: 70%;
+
+    }
+    */
+    h1{
+      text-align: center;
+    }
+    .products{
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      border: 3px solid #000;
+      display: flex;
+      width: 80vw;
+      max-width: 1200px;
+      background-color: aquamarine;
+      gap: 1rem; /* 아이템의 크기에 영향을 주지 않는다.*/
+      padding: 1rem;
+    }
+    .products .item{
+      width: 33.3333%;/*  갭,패딩으로 여백을 줬기 때문에ul안에서 33%를 가진다./flex속성으로 아이템요소가 넘치지 않게된다. txt와 이미지를 동일하게 범위를 지정*/
+      aspect-ratio: 1 / 1; /* 높이값 지정 height는 부모의 높이값이 정의가 되어있지않아서 쓰지 못함*/
+      
+      overflow: hidden;
+      
+    }
+    .products .item a{
+      color: #000;
+      text-decoration: none;
+     
+      
+      
+    }
+    .products .item a img{
+      width: 100%; /* 이미지가 넘치지 않게 해줌*/
+      vertical-align: top;
+    }
+    .products .item a .txt-box{
+      background-color: rgba( 0, 0 ,0 ,0.7);
+      color: #fff;
+      transition: 0.4s;
+      padding: 1rem;
+      aspect-ratio: 1 / 1;/* 넓이값은 블록이라 부모값을 따라가서 안써도 되지만 높이값을 지정해줘야한다.*/
+      
+      
+      
+      
+    }
+    .products .item a .txt-box .desc1{
+      white-space: nowrap; /* 글자 자동 줄바꿈 금지*/
+      text-overflow: ellipsis; /* 말줄임  overflow필요함*/
+      overflow: hidden;
+
+    }
+    .products .item a .txt-box .desc2{
+      /* 여러 줄 말줄임  차라리 스크립트를 쓰면 된다.*/
+      display: -webkit-box;
+      text-overflow: ellipsis; /* 말줄임  overflow필요함*/
+      overflow: hidden;
+      -webkit-line-clamp: 2;/* 여러 줄일때 텍스트를 자르는 줄*/
+      -webkit-box-orient: vertical; /* display:box 진행 방향*/
+
+    }
+    .products .item:hover a img + .txt-box{
+     
+      transform: translateY(-100%);
+    }
+  </style>
+</head> 
+<body>
+  <h1>transEx5</h1>
+  
+  <ul class="products">
+    <li class="item">
+     <a href="#">
+      <img src="./shoes1.jpg" alt="shoes1">
+      <div class="txt-box">
+        <h3>조던 1 하이 (little kids)</h3>
+        <p class="desc1">지난번에 기회를 놓쳤어도 걱정하지 마세요</p>
+        <p class="price">가격: 109,000원</p>
+      </div>
+     </a> 
+    </li>
+    <li class="item">
+     <a href="#">
+      <img src="./shoes2.jpg" alt="shoes2">
+      <div class="txt-box">
+        <h3>나이키 덩크 로우 레트로</h3>
+        <p class="desc2">하드우드를 위해 태어나 스트리트로 무대를 옮겨온 나이키 덩크 로우 레트로
+          레트로 레트로 레트로 레트로
+        </p>
+        <p class="price">가격: 109,000원</p>
+      </div>
+     </a> 
+    </li>
+    <li class="item">
+      <a href="#">
+       <img src="./shoes3.jpg" alt="shoes3">
+       <div class="txt-box">
+        <h3>조던 1 하이 (little kids)</h3>
+        <p class="desc3">지난번에 기회를 놓쳤어도 걱정하지 마세요</p>
+        <p class="price">가격: 109,000원</p>
+       </div>
+      </a> 
+    </li>
+  </ul>
+  
+</body>
+</html>
